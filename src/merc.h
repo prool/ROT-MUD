@@ -78,7 +78,7 @@ typedef short   int			sh_int;
 typedef unsigned char			bool;
 #endif
 
-#define WWW_WHO		"/home/WWW/cgi-bin/output/rot.who"
+#define WWW_WHO		"rot.who"
 
 /*
  * Colour stuff by Lope of Loping Through The MUD
