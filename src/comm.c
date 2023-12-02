@@ -1141,6 +1141,7 @@ void init_descriptor( int control )
 #if defined(unix)
 void init_descriptor_www( int wwwcontrol )
 {
+return; // prool: this code is crashed...
     char buf[MAX_STRING_LENGTH];
     char buf2[MAX_STRING_LENGTH];
     DESCRIPTOR_DATA *dnew;
