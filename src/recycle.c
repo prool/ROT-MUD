@@ -267,7 +267,7 @@ void free_gen_data(GEN_DATA *gen)
 } 
 
 /* stuff for recycling extended descs */
-EXTRA_DESCR_DATA *extra_descr_free;
+extern EXTRA_DESCR_DATA *extra_descr_free; // by prool
 
 EXTRA_DESCR_DATA *new_extra_descr(void)
 {

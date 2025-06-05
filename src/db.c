@@ -75,12 +75,12 @@ extern  AFFECT_DATA	*affect_free;
  * Globals.
  */
 HELP_DATA *		help_first;
-HELP_DATA *		help_last;
+extern HELP_DATA *		help_last; // by prool
 
 SHOP_DATA *		shop_first;
 SHOP_DATA *		shop_last;
 
-NOTE_DATA *		note_free;
+//NOTE_DATA *		note_free; // by prool
 
 MPROG_CODE *		mprog_list;
 
@@ -96,7 +96,7 @@ char *			help_login;
 char			log_buf		[2*MAX_INPUT_LENGTH];
 char			boot_buf	[MAX_STRING_LENGTH];
 KILL_DATA		kill_table	[MAX_LEVEL];
-NOTE_DATA *		note_list;
+//NOTE_DATA *		note_list;	// by prool
 OBJ_DATA *		object_list;
 TIME_INFO_DATA		time_info;
 WEATHER_DATA		weather_info;
