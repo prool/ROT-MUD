@@ -62,6 +62,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 
 #include "merc.h"
 #include "recycle.h"
@@ -119,7 +120,6 @@ const	char	echo_on_str	[] = { '\0' };
 const	char 	go_ahead_str	[] = { '\0' };
 #endif
 
-#if	defined(unix)
 #include <fcntl.h>
 #include <netdb.h>
 #include <netinet/in.h>
@@ -128,7 +128,6 @@ const	char 	go_ahead_str	[] = { '\0' };
 const	char	echo_off_str	[] = { IAC, WILL, TELOPT_ECHO, '\0' };
 const	char	echo_on_str	[] = { IAC, WONT, TELOPT_ECHO, '\0' };
 const	char 	go_ahead_str	[] = { IAC, GA, '\0' };
-#endif
 
 
 
@@ -152,7 +151,6 @@ int	socket		args( ( int domain, int type, int protocol ) );
 #endif
 
 #if	defined(apollo)
-#include <unistd.h>
 void	bzero		args( ( char *b, int length ) );
 #endif
 
@@ -173,21 +171,6 @@ int	socket		args( ( int domain, int type, int protocol ) );
 #if	defined(interactive)
 #include <net/errno.h>
 #include <sys/fnctl.h>
-#endif
-
-#if	defined(linux)
-/*int	accept		args( ( int s, struct sockaddr *addr, int *addrlen
-) );*/
-/*int	bind		args( ( int s, struct sockaddr *name, int namelen
-) );*/
-int	close		args( ( int fd ) );
-//int	gettimeofday	args( ( struct timeval *tp, struct timezone *tzp ) ); // prool
-int	listen		args( ( int s, int backlog ) );
-int	read		args( ( int fd, char *buf, int nbyte ) );
-int	select		args( ( int width, fd_set *readfds, fd_set *writefds,
-			    fd_set *exceptfds, struct timeval *timeout ) );
-int	socket		args( ( int domain, int type, int protocol ) );
-int	write		args( ( int fd, char *buf, int nbyte ) );
 #endif
 
 #if	defined(macintosh)
@@ -328,14 +311,12 @@ bool	read_from_descriptor	args( ( DESCRIPTOR_DATA *d ) );
 bool	write_to_descriptor	args( ( int desc, char *txt, int length ) );
 #endif
 
-#if defined(unix)
 void	game_loop_unix		args( ( int control, int wwwcontrol ) );
 int	init_socket		args( ( int port ) );
 void	init_descriptor		args( ( int control ) );
 void	init_descriptor_www	args( ( int wwwcontrol ) );
 bool	read_from_descriptor	args( ( DESCRIPTOR_DATA *d ) );
 bool	write_to_descriptor	args( ( int desc, char *txt, int length ) );
-#endif
 
 
 

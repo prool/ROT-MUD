@@ -2388,6 +2388,12 @@ char *	crypt		args( ( const char *key, const char *salt ) );
  *   so players can go ahead and telnet to all the other descriptors.
  * Then we close it whenever we need to open a file (e.g. a save file).
  */
+
+#define PLAYER_DIR      "../player/"        	/* Player files */
+#define GOD_DIR         "../gods/"  		/* list of gods */
+#define TEMP_FILE	"../player/romtmp"
+#define NULL_FILE	"/dev/null"		/* To reserve one stream */
+
 #if defined(macintosh)
 #define PLAYER_DIR	""			/* Player files	*/
 #define TEMP_FILE	"romtmp"
@@ -2398,13 +2404,6 @@ char *	crypt		args( ( const char *key, const char *salt ) );
 #define PLAYER_DIR	""			/* Player files */
 #define TEMP_FILE	"romtmp"
 #define NULL_FILE	"nul"			/* To reserve one stream */
-#endif
-
-#if defined(unix)
-#define PLAYER_DIR      "../player/"        	/* Player files */
-#define GOD_DIR         "../gods/"  		/* list of gods */
-#define TEMP_FILE	"../player/romtmp"
-#define NULL_FILE	"/dev/null"		/* To reserve one stream */
 #endif
 
 #define AREA_LIST       "area.lst"  /* List of areas*/
