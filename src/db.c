@@ -383,7 +383,7 @@ void boot_db( void )
 
 
     sprintf( log_buf, "reading %s", strArea );
-    log_string( log_buf );
+    //log_string( log_buf );
 
 		if ( ( fpArea = fopen( strArea, "r" ) ) == NULL )
 		{

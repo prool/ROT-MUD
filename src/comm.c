@@ -1039,7 +1039,7 @@ void init_descriptor( int control )
 	    ( addr >>  8 ) & 0xFF, ( addr       ) & 0xFF
 	    );
 	sprintf( log_buf, "Sock.sinaddr:  %s", buf );
-	log_string( log_buf );
+	//log_string( log_buf );
 	from = gethostbyaddr( (char *) &sock.sin_addr,
 	    sizeof(sock.sin_addr), AF_INET );
 	dnew->host = str_dup( from ? from->h_name : buf );
@@ -1443,14 +1443,14 @@ bool read_from_descriptor( DESCRIPTOR_DATA *d )
 	}
 	else if ( nRead == 0 )
 	{
-	    log_string( "EOF encountered on read." );
+	    //log_string( "EOF encountered on read." );
 	    return FALSE;
 	}
 	else if ( errno == EWOULDBLOCK )
 	    break;
 	else
 	{
-	    perror( "Read_from_descriptor" );
+	    //perror( "Read_from_descriptor" );
 	    return FALSE;
 	}
     }
